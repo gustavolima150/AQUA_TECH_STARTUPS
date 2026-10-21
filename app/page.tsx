@@ -1,16 +1,70 @@
 import Link from "next/link";
-import { ArrowRight, CalendarDays, CheckCircle2, Layers3, LockKeyhole, Menu, Rocket, Sparkles, UsersRound, Zap, CalendarClock, Flag, ListTodo, ShieldCheck, ArrowUpRight } from "lucide-react";
-export default function Home(){return <div className="landing"><header className="landing-nav wrap"><Link href="/" className="brand"><span className="brand-logo"><Sparkles size={19}/></span>nexo<span className="brand-dot">.</span></Link><nav><a href="#recursos">Recursos</a><a href="#como-funciona">Como funciona</a><a href="#seguranca">Segurança</a></nav><div className="landing-nav-actions"><Link href="/entrar" className="btn btn-ghost">Entrar</Link><Link href="/cadastro" className="btn btn-primary">Começar agora <ArrowRight size={16}/></Link></div></header>
- <section className="hero wrap"><div className="hero-left"><div className="hero-kicker"><span>✦</span> O SISTEMA OPERACIONAL DA SUA STARTUP</div><h1>Seu time alinhado.<br/>Sua startup <em>em movimento.</em></h1><p>Reuniões inteligentes, tarefas organizadas, metas claras e uma equipe conectada. Tudo em um só lugar para fazer grandes ideias saírem do papel.</p><div className="hero-actions"><Link href="/cadastro" className="btn btn-primary btn-hero">Começar gratuitamente <ArrowRight size={18}/></Link><a href="#recursos" className="btn btn-outline btn-hero">Explorar a plataforma</a></div><div className="hero-trust"><span className="stacked-avatars"><i>LA</i><i>MC</i><i>BR</i></span><span>Feito para quem transforma<br/><strong>ideias em negócios reais.</strong></span></div></div>
- <div className="hero-preview"><div className="preview-glow"/><div className="preview-window"><div className="preview-side"><div className="preview-brand">✦ nexo.</div><div className="preview-link active">▦ <span>Visão geral</span></div><div className="preview-link">▤ <span>Calendário</span></div><div className="preview-link">◷ <span>Reuniões</span></div><div className="preview-link">☑ <span>Tarefas</span></div><div className="preview-link">♙ <span>Equipe</span></div></div><div className="preview-main"><div className="preview-top"><span>Workspace / Visão geral</span><span className="preview-avatar">AM</span></div><div className="preview-greet">Sua startup está crescendo ✨</div><div className="preview-sub">O que vamos construir hoje?</div><div className="preview-cards"><div><small>REUNIÕES</small><b>04</b><span>◷ esta semana</span></div><div><small>TAREFAS</small><b>12</b><span>↗ em andamento</span></div><div><small>CONCLUÍDAS</small><b>78%</b><span>✓ ótimo progresso</span></div></div><div className="preview-block"><b>Próximos passos</b><div className="preview-task"><span>◉</span> Validar protótipo do MVP <i>HOJE</i></div><div className="preview-task"><span>◯</span> Definir estratégia de vendas <i>QUA</i></div><div className="preview-task"><span>◯</span> Preparar apresentação <i>SEX</i></div></div></div></div><div className="floating-note"><span>✦</span><div><strong>Um único lugar.</strong><small>Infinitas possibilidades.</small></div></div></div></section>
- <section className="logo-strip"><div className="wrap"><span>MENOS PLANILHAS. MAIS EXECUÇÃO.</span><span>✦ ORGANIZAÇÃO</span><span>✦ COLABORAÇÃO</span><span>✦ PROGRESSO</span></div></section>
- <section id="recursos" className="features wrap"><div className="features-head"><span className="eyebrow">TUDO QUE SUA STARTUP PRECISA</span><h2>O espaço onde boas ideias<br/><em>viram resultados.</em></h2><p>Esqueça as informações espalhadas. Conecte sua equipe do planejamento à entrega.</p></div><div className="feature-grid">{[
- {icon:CalendarDays,title:"Calendário integrado",desc:"Visualize reuniões, prazos e datas importantes em uma única agenda.",color:"feature-violet"},
- {icon:CalendarClock,title:"Reuniões com propósito",desc:"Organize pautas, registre decisões e acompanhe os assuntos discutidos.",color:"feature-blue"},
- {icon:ListTodo,title:"Gestão de tarefas",desc:"Distribua responsabilidades e acompanhe entregas em um quadro visual.",color:"feature-peach"},
- {icon:UsersRound,title:"Equipe & permissões",desc:"Defina funções e convide pessoas com acesso controlado por startup.",color:"feature-green"},
- {icon:Flag,title:"Roadmap estratégico",desc:"Defina marcos, datas-alvo e monitore o progresso do negócio.",color:"feature-yellow"},
- {icon:ShieldCheck,title:"Segurança de verdade",desc:"Autenticação com e-mail confirmado e isolamento dos dados por equipe.",color:"feature-indigo"}
- ].map(x=><div className="feature-card" key={x.title}><span className={`feature-icon ${x.color}`}><x.icon size={24}/></span><h3>{x.title}</h3><p>{x.desc}</p><ArrowUpRight size={20} className="feature-arrow"/></div>)}</div></section>
- <section id="como-funciona" className="how-section"><div className="wrap how-inner"><div><span className="eyebrow">SIMPLES DE COMEÇAR</span><h2>Seu próximo capítulo<br/>começa com um <em>clique.</em></h2><p>Comece sozinho, cresça com seu time e tenha clareza do que vem depois.</p><Link href="/cadastro" className="btn btn-primary">Criar minha conta <ArrowRight size={17}/></Link></div><div className="how-steps"><div><span>01</span><strong>Crie sua conta</strong><p>Cadastre-se e confirme seu e-mail.</p></div><div><span>02</span><strong>Configure sua startup</strong><p>Dê um nome ao espaço e convide seu time.</p></div><div><span>03</span><strong>Planeje, execute e cresça</strong><p>Centralize decisões, tarefas e metas.</p></div></div></div></section>
- <section id="seguranca" className="landing-cta wrap"><span className="cta-star">✦</span><span className="eyebrow">CONSTRUA COM CONFIANÇA</span><h2>Sua próxima conquista<br/>merece um <em>Nexo.</em></h2><p>Um ambiente feito para quem leva inovação a sério.</p><Link className="btn btn-white btn-hero" href="/cadastro">Criar meu espaço <ArrowRight size={18}/></Link></section><footer className="landing-footer wrap"><Link className="brand" href="/"><span className="brand-logo"><Sparkles size={18}/></span>nexo<span className="brand-dot">.</span></Link><p>© {new Date().getFullYear()} Nexo Startup OS. Feito para tirar ideias do papel.</p><Link href="/entrar">Acessar plataforma <ArrowRight size={15}/></Link></footer></div>}
+import {
+  ArrowRight, ArrowUpRight, CalendarDays, Check, CheckCheck, CircleDot,
+  Flag, Layers3, LockKeyhole, ShieldCheck, Sprout,
+  Workflow, Zap, ListTodo, CalendarClock, TrendingUp, GitBranch, MoveUpRight
+} from "lucide-react";
+import { ThemeToggle } from "@/components/theme-toggle";
+import { ScrollReveal } from "@/components/scroll-reveal";
+
+const phases = [
+  { index: "01", title: "Crie seu espaço", text: "Organize uma ou várias startups, mantendo os dados de cada equipe separados." },
+  { index: "02", title: "Reúna seu time", text: "Convide os integrantes, atribua papéis e planeje a próxima reunião." },
+  { index: "03", title: "Faça acontecer", text: "Acompanhe prioridades, prazos, metas e decisões até a entrega." },
+];
+
+export default function Home() {
+  return <div className="verdant-site">
+    <div className="site-atmosphere" aria-hidden="true" />
+    <header className="v-header" id="inicio">
+      <Link href="/" className="v-brand" aria-label="NEXO — página inicial"><span className="v-brand-icon"><Sprout size={19} strokeWidth={2.2} /></span><span>NEXO<span className="v-brand-period">.</span></span></Link>
+      <nav aria-label="Menu principal" className="v-nav-links"><a href="#plataforma">Plataforma</a><a href="#como-funciona">Como funciona</a><a href="#seguranca">Segurança</a></nav>
+      <div className="v-header-actions"><ThemeToggle /><Link href="/entrar" className="v-nav-login">Entrar</Link><Link href="/cadastro" className="v-button v-button-small">Começar <ArrowUpRight size={16}/></Link></div>
+    </header>
+
+    <main>
+      <section className="v-hero v-container" aria-labelledby="v-hero-title">
+        <div className="v-announcement"><span className="v-status-dot"/><span>UM NOVO JEITO DE CONSTRUIR</span><span className="v-announcement-arrow"><ArrowUpRight size={13}/></span></div>
+        <h1 id="v-hero-title">Grandes ideias<br/><span className="v-hero-line">merecem <em>florescer.</em></span></h1>
+        <p className="v-hero-description">Mais clareza para decidir. Mais sintonia para executar. Um espaço inteligente para transformar o potencial da sua startup em progresso real.</p>
+        <div className="v-hero-cta"><Link href="/cadastro" className="v-button v-button-hero">Comece a construir <ArrowRight size={18}/></Link><a href="#plataforma" className="v-button-quiet">Conhecer a plataforma <ArrowUpRight size={17}/></a></div>
+        <div className="v-hero-benefits"><span><Check size={13}/> Múltiplos espaços</span><span><Check size={13}/> Equipe alinhada</span><span><Check size={13}/> Acesso protegido</span></div>
+
+        <ScrollReveal className="v-feature-grid" id="plataforma">
+          <article className="v-feature v-feature-connections">
+            <div className="v-feature-head"><span className="v-feature-icon"><Layers3 size={22}/></span><span className="v-feature-number">01 / CENTRALIZE</span></div>
+            <h2>Tudo conectado.<br/>Nada perdido.</h2>
+            <p>Reúna as informações importantes da sua startup em um único lugar.</p>
+            <div className="v-connection-visual" aria-hidden="true"><div className="v-visual-items"><span><CalendarClock size={16}/></span><span><ListTodo size={16}/></span><span><Flag size={16}/></span></div><div className="v-connection-lines"><i/><i/><i/></div><span className="v-connection-hub"><Sprout size={28}/></span></div>
+          </article>
+          <article className="v-feature v-feature-progress">
+            <div className="v-feature-head"><span className="v-feature-icon"><TrendingUp size={22}/></span><span className="v-feature-number">02 / EVOLUA</span></div>
+            <h2>Enxergue o<br/>que realmente avança.</h2>
+            <p>Metas, prazos e prioridades com visibilidade do primeiro dia à entrega.</p>
+            <div className="v-chart" aria-hidden="true"><div className="v-chart-head"><span>Ritmo de execução</span><span><TrendingUp size={12}/> EM EVOLUÇÃO</span></div><svg viewBox="0 0 320 125" preserveAspectRatio="none" fill="none"><defs><linearGradient id="v-chart-area" x1="0" y1="0" x2="0" y2="1"><stop stopColor="#D5FC77" stopOpacity=".32"/><stop offset="1" stopColor="#D5FC77" stopOpacity="0"/></linearGradient></defs><path d="M0 114H320M0 78H320M0 40H320" stroke="#a7ca6b" strokeOpacity=".12" strokeDasharray="4 6"/><path d="M0 101 C25 106 35 65 59 71 S95 99 121 62 S155 87 182 52 S221 68 250 28 S290 50 320 10 L320 125 L0 125Z" fill="url(#v-chart-area)"/><path d="M0 101 C25 106 35 65 59 71 S95 99 121 62 S155 87 182 52 S221 68 250 28 S290 50 320 10" stroke="#D5FC77" strokeWidth="2.7" strokeLinecap="round"/><circle cx="250" cy="28" r="5.5" fill="#D5FC77"/><circle cx="250" cy="28" r="12" stroke="#D5FC77" strokeOpacity=".28"/></svg></div>
+          </article>
+          <article className="v-feature v-feature-secure">
+            <div className="v-feature-head"><span className="v-feature-icon"><ShieldCheck size={22}/></span><span className="v-feature-number">03 / COLABORE</span></div>
+            <h2>Cresçam juntos.<br/>Com confiança.</h2>
+            <p>Permissões por função e cada pessoa sabendo o que precisa fazer.</p>
+            <div className="v-orbit-visual" aria-hidden="true"><div className="v-orbit v-orbit-outer"/><div className="v-orbit v-orbit-mid"/><div className="v-orbit v-orbit-inner"/><span className="v-orbit-core"><ShieldCheck size={28}/></span><span className="v-orbit-point point-one"/><span className="v-orbit-point point-two"/><span className="v-orbit-point point-three"/></div>
+          </article>
+        </ScrollReveal>
+      </section>
+
+      <div className="v-values-band" aria-label="Valores da plataforma"><span>PROJETADO PARA EQUIPES QUE CONSTROEM</span><div><span><CircleDot size={15}/> CLAREZA</span><span><Workflow size={15}/> FLUXO</span><span><GitBranch size={15}/> CONEXÃO</span><span><Zap size={15}/> EVOLUÇÃO</span></div></div>
+
+      <section className="v-product-section v-container">
+        <ScrollReveal className="v-section-copy"><span className="v-kicker"><span/> SEU CENTRO DE COMANDO</span><h2>Menos ruído.<br/><em>Mais movimento.</em></h2><p>Deixe as conversas soltas e as planilhas fragmentadas para trás. Seu time visualiza as prioridades e conecta cada decisão ao que precisa acontecer.</p><ul><li><CheckCheck size={19}/> Visualize o andamento da sua startup</li><li><CheckCheck size={19}/> Organize reuniões e decisões em um só fluxo</li><li><CheckCheck size={19}/> Saiba quem faz o quê — e até quando</li></ul><Link className="v-inline-link" href="/cadastro">Explorar a experiência <ArrowUpRight size={18}/></Link></ScrollReveal>
+        <ScrollReveal className="v-product-preview"><div className="v-product-title"><span><Sprout size={16}/> NEXO / VISÃO GERAL</span><span>PRÉVIA ILUSTRATIVA <CircleDot size={12}/></span></div><div className="v-product-surface"><div className="v-product-top"><div><span>ESPAÇO DE TRABALHO</span><h3>Próximos passos <span>✳</span></h3><p>Um lugar para o que faz seu negócio evoluir.</p></div><div className="v-preview-avatar">N</div></div><div className="v-product-metrics"><div><small>REUNIÕES</small><strong>04</strong><span>↗ próximas</span></div><div><small>TAREFAS</small><strong>12</strong><span>em andamento</span></div><div><small>PROGRESSO</small><strong>78%</strong><span>concluído</span></div></div><div className="v-product-task-list"><div><span className="v-mini-check checked"><Check size={12}/></span> Alinhar próximos passos <span className="v-tag">Concluído</span></div><div><span className="v-mini-check"/> Validar o primeiro protótipo <span className="v-tag">Esta semana</span></div><div><span className="v-mini-check"/> Planejar lançamento do MVP <span className="v-tag">Em breve</span></div></div></div></ScrollReveal>
+      </section>
+
+      <section className="v-steps-section" id="como-funciona"><div className="v-container"><ScrollReveal className="v-centered-heading"><span className="v-kicker"><span/> SIMPLES DE COMEÇAR</span><h2>Sua ideia tem potencial.<br/><em>Dê a ela um caminho.</em></h2><p>Três passos para criar um ambiente onde o trabalho acontece.</p></ScrollReveal><ScrollReveal className="v-steps-grid">{phases.map(({index,title,text})=><article className="v-step" key={index}><div className="v-step-number">{index}</div><h3>{title}</h3><p>{text}</p><MoveUpRight size={20}/></article>)}</ScrollReveal></div></section>
+
+      <section className="v-security-section v-container" id="seguranca"><ScrollReveal className="v-security-card"><span className="v-security-icon"><LockKeyhole size={24}/></span><div><span className="v-kicker">A SEGURANÇA TAMBÉM CRESCE COM VOCÊ</span><h2>Cada time no seu espaço.<br/><em>Cada informação no lugar certo.</em></h2><p>Autenticação de usuários, e-mail verificado e regras de acesso por equipe com Supabase para você trabalhar com mais tranquilidade.</p></div><ShieldCheck className="v-security-watermark" size={160} strokeWidth={.8}/></ScrollReveal></section>
+
+      <section className="v-final-cta v-container"><ScrollReveal className="v-final-card"><div className="v-final-glow"/><span className="v-kicker">O PRÓXIMO CAPÍTULO COMEÇA AQUI</span><h2>O futuro da sua startup<br/><em>não espera.</em></h2><p>Um espaço para sua equipe crescer com clareza.</p><Link href="/cadastro" className="v-button v-button-dark">Criar meu espaço <ArrowUpRight size={18}/></Link></ScrollReveal></section>
+    </main>
+    <footer className="v-footer v-container"><Link href="/" className="v-brand"><span className="v-brand-icon"><Sprout size={17}/></span><span>NEXO<span className="v-brand-period">.</span></span></Link><span>Ideias ganham direção. Times ganham impulso.</span><div><a href="#inicio">Voltar ao topo ↑</a><Link href="/entrar">Acessar plataforma <ArrowUpRight size={14}/></Link></div><small>© {new Date().getFullYear()} NEXO Startup OS</small></footer>
+  </div>
+}

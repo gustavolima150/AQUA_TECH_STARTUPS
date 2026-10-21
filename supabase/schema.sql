@@ -156,7 +156,7 @@ alter table public.invitations enable row level security;
 
 create policy "Read shared profiles" on public.profiles for select to authenticated using (id=(select auth.uid()) or public.shares_workspace(id));
 create policy "Edit own profile" on public.profiles for update to authenticated using (id=(select auth.uid())) with check(id=(select auth.uid()));
-create policy "Read own workspaces" on public.workspaces for select to authenticated using(public.is_member(id));
+create policy "Read own workspaces" on public.workspaces for select to authenticated using(public.is_member(id) or created_by=(select auth.uid()));
 create policy "Create workspace" on public.workspaces for insert to authenticated with check (created_by=(select auth.uid()));
 create policy "Edit workspace admins" on public.workspaces for update to authenticated using(public.is_admin(id)) with check(public.is_admin(id));
 create policy "Remove workspace owner" on public.workspaces for delete to authenticated using(created_by=(select auth.uid()) and public.is_admin(id));
@@ -264,3 +264,12 @@ end;
 $$;
 create trigger meetings_lock_creator before update on public.meetings for each row execute function public.lock_creator();
 create trigger tasks_lock_creator before update on public.tasks for each row execute function public.lock_creator();
+
+-- Avoid exposing privileged helper/trigger functions to unauthenticated callers.
+revoke execute on function public.add_workspace_owner() from public, anon, authenticated;
+revoke execute on function public.sync_profile() from public, anon, authenticated;
+revoke execute on function public.is_member(uuid) from public, anon;
+revoke execute on function public.is_admin(uuid) from public, anon;
+revoke execute on function public.can_edit(uuid) from public, anon;
+revoke execute on function public.shares_workspace(uuid) from public, anon;
+grant execute on function public.is_member(uuid), public.is_admin(uuid), public.can_edit(uuid), public.shares_workspace(uuid) to authenticated;
